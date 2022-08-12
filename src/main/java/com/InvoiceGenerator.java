@@ -1,37 +1,25 @@
 package com;
 
+
 public class InvoiceGenerator {
+    private static final double COST_PER_KM = 10.0;
+    private static final int COST_PER_TIME = 1;
+    private static final int MINIMUM_FARE = 5;
 
-    private static final int costPerMinute =1;
-    private static final double minCostPerKm =10;
-    private static final double minfare = 5;
 
-    public double calculateFare(double distance, int minute) {
-        double totalfare = (distance * minCostPerKm) + (minute * costPerMinute);
-
-        if(distance < 1.0 && minute <= 5) {
-            return totalfare;
-        }else if(distance < 0.5 && minute <= 2) {
-            return minfare;
-        }
-        return totalfare;
+    public double calculateFare(double distance, double time) {
+        double calculate_Fare = (distance * COST_PER_KM) + (time * COST_PER_TIME);
+        if (calculate_Fare < MINIMUM_FARE) {
+            return MINIMUM_FARE;
+        } else
+            return calculate_Fare;
     }
 
-    public double calculateFare(Ride[] ride) {
-        double totalfare = 0;
-        for(Ride rides: ride) {
-            totalfare += this.calculateFare(rides.distance, rides.minute);
+    public double calculateFare(Ride[] rides) {
+        double totalFare = 0.0;
+        for (Ride ride : rides) {
+            totalFare += calculateFare(ride.getDistance(), ride.getTime());
         }
-        return totalfare;
-    }
-
-    public InvoiceSummary calculateTotalFare(Ride[] ride) {
-        double totalfare = 0;
-        double averageFare = 0;
-        for(Ride rides: ride) {
-            totalfare += this.calculateFare(rides.distance, rides.minute);
-        }
-        averageFare = totalfare/ride.length;
-        return new InvoiceSummary(ride.length, totalfare, averageFare);
+        return totalFare;
     }
 }
