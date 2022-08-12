@@ -1,13 +1,19 @@
 package com;
 
 public class Ride {
+    private double distance = 0.0;
+    private double time = 0.0;
 
-    public final double distance;
-    public final int minute;
-
-    public Ride(double distance, int minute) {
-        this.distance=distance;
-        this.minute=minute;
+    public Ride(double v, int i) {
+        this.distance = v;
+        this.time = i;
     }
 
+    public double getDistance() {
+        return distance;
+    }
+
+    public double getTime() {
+        return time;
+    }
 }
