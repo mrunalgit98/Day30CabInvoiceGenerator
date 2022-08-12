@@ -40,7 +40,7 @@ public class CabInvoiceGeneratorTest {
     @Test
     public void givenUserId_shouldReturnInvoiceSummary() {
         CabInvoiceGenerator invoiceGenerator = new CabInvoiceGenerator();
-        String userId = "sunilgollapalli@gmail.com";
+        String userId = "random123@gmail.com";
         Ride[] rides = {new Ride(2.0, 5),
                 new Ride(0.1, 1)};
         invoiceGenerator.addRides(userId, rides);
