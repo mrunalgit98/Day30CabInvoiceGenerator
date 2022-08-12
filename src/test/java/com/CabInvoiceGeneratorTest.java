@@ -8,7 +8,7 @@ public class CabInvoiceGeneratorTest {
     public void givenUserIdAndRides_ShouldReturn_MultipleInvoiceSummary() {
         CabInvoiceGenerator invoiceGenerator = new CabInvoiceGenerator();
 UC5PremiumRides
-        String userId = "subham@gmailcom.com";
+        String userId = "abc@gmailcom.com";
         Ride[] rides = {new Ride(5, 1, CabInvoiceGenerator.RideMode.NORMAL), new Ride(1, 1, CabInvoiceGenerator.RideMode.PREMIUM)};
 
         String userId = "random123@gmail.com";
