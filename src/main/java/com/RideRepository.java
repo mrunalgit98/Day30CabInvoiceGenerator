@@ -1,6 +1,5 @@
 package com;
 
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -18,5 +17,6 @@ public class RideRepository {
 
     public Ride[] getRides(String userId) {
         return this.userRides.get(userId).toArray(new Ride[0]);
+
     }
 }

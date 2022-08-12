@@ -1,8 +1,8 @@
 package com;
 
-
 public class Ride {
     private double distance;
+    CabInvoiceGenerator.RideMode rideMode;
 
     public double getDistance() {
         return distance;
@@ -23,9 +23,10 @@ public class Ride {
     private double time;
 
 
-    public Ride(double distance, double time) {
+    public Ride(double distance, double time, CabInvoiceGenerator.RideMode rideMode) {
         this.distance = distance;
         this.time = time;
+        this.rideMode = rideMode;
     }
 
 
